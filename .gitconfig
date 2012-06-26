@@ -1,0 +1,50 @@
+[user]
+	name = [Username]
+	email = [Email]
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote =  green
+
+[color "diff"]
+	meta = blue bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[alias]
+	s = status
+	d = diff
+	a = add
+	r = rebase
+	m = checkout master
+	st = status
+	ci = commit
+	co = checkout
+	fp = format-patch
+	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative -n 20
+	lgo = log --pretty=oneline -n 40
+	lga = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
+	lgoa = log --pretty=oneline
+	bl = branch -l
+	find = log -p -m -S
+	oops = commit --amend -C HEAD
+	push = push --tags
+	fdiff = diff --name-only
+	ign = ls-files -o -i --exclude-standard
+[core]
+	pager = cat
+	excludesfile = ~/.gitignore
+	filemode = false
+[rerere]
+	enabled = 1
