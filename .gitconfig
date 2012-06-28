@@ -43,7 +43,7 @@
 	fdiff = diff --name-only
 	ign = ls-files -o -i --exclude-standard
 [core]
-	pager = cat
+	pager = less -x4
 	excludesfile = ~/.gitignore
 	filemode = false
 [rerere]
