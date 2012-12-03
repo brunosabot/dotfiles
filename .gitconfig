@@ -31,13 +31,19 @@
 	st = status
 	ci = commit
 	co = checkout
+	cp = cherry-pick
+	cpc = cherry-pick --continue
 	fp = format-patch
 	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative -n 20
 	lgo = log --pretty=oneline -n 40
 	lga = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
 	lgoa = log --pretty=oneline
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	diffr  = "!f() { git diff "$1"^.."$1"; }; f"
 	bl = branch -l
-	find = log -p -m -S
+	find = log -p --minimal -m -S
+	oups = commit --amend -C HEAD
 	oops = commit --amend -C HEAD
 	push = push --tags
 	fdiff = diff --name-only
