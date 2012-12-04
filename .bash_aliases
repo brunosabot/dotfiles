@@ -34,7 +34,4 @@ alias gp='git pull origin master'
 alias gs='git status -s -b'
 alias gdmh='git diff master HEAD'
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`' # Go to git root
-function gitrm() {
-	for i in `git status | grep deleted | awk '{print $3}'`; do git rm $i; done
-}
 
