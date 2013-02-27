@@ -26,6 +26,10 @@ if [ -f ~/shell/git_completion.sh]; then
 	source ~/shell/git_completion.sh
 fi
 
+if [ -f ~/shell/git_prompt.sh]; then
+	source ~/shell/git_prompt.sh
+fi
+
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
