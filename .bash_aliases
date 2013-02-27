@@ -1,9 +1,4 @@
 export LS_OPTIONS='--color=auto'
-export HISTCONTROL=ignoredups
-
-declare -x HISTCONTROL=ignoredups
-declare -x HISTFILESIZE=100000
-declare -x HISTSIZE=100000
 
 # RACCOURCIS
 alias cd='cd -P'

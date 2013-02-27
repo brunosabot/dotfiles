@@ -5,12 +5,10 @@ shopt -s histappend
 
 umask 022
 
-HISTCONTROL=ignoredups:ignorespace
-HISTSIZE=100000
-HISTFILESIZE=100000
-
-LS_OPTIONS='--color=auto'
-HISTCONTROL=ignoredups
+declare -x HISTCONTROL=ignoredups
+declare -x HISTFILESIZE=100000
+declare -x HISTSIZE=100000
+declare -x HISTIGNORE=ls:ll:l:exit:cd:gs
 
 if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
