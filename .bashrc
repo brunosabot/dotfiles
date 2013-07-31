@@ -57,9 +57,11 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM="auto verbose"
 git='$(__git_ps1 "[%s]")'
 
+FROWNY="$PS1PURPLE:( $PS1NC"
+SELECT="if [ \$? = 0 ]; then echo \"\"; else echo \"${FROWNY}\"; fi"
 LOAD="`uptime | awk -F'load average: ' '{ print $2 }'`"
 
-PS1="$PS1COLOR[$PS1WHITE\$(date \"+%H:%M\")$PS1COLOR]$PS1WHITE \u$PS1COLOR@$PS1WHITE\h$PS1COLOR:$PS1WHITE\w$PS1COLOR$git$PS1NC$ "
+PS1="\`${SELECT}\`$PS1COLOR[$PS1WHITE\$(date \"+%H:%M\")$PS1COLOR]$PS1WHITE \u$PS1COLOR@$PS1WHITE\h$PS1COLOR:$PS1WHITE\w$PS1COLOR$git$PS1NC$ "
 
 echo -e "$NC =============== $WHITE$HOSTNAME$NC ==============="
 echo ""
