@@ -52,3 +52,17 @@ function mkcd() {
 function died() {
 	top -b -n 1 | awk '{if (NR <=7) print; else if ($8 == "D") {print; count++} } END {print "Total status D: "count}'
 }
+
+# get current host related info
+function ii() {
+	NETWORK="`/sbin/ifconfig | awk -F'inet addr:' '{ print $2 }' | awk '{print $1}' | tr -s ' ' '\n'`"
+
+	echo -e "${COLOR}System infos:$NC " ; uname -a
+	echo -e "\n${COLOR}Users logged on:$NC " ; w -sh
+	echo -e "\n${COLOR}Current date:$NC " ; date
+	echo -e "\n${COLOR}Machine stats:$NC " ; uptime
+	echo -e "\n${COLOR}Memory stats:$NC " ; free -h
+	echo -e -n "\n${COLOR}Network Information:$NC " ;
+	echo -e "$NETWORK"
+
+}
