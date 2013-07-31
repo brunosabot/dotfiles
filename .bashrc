@@ -71,3 +71,11 @@ else
 fi
 echo ""
 
+# X Terminal titles
+case "$TERM" in
+xterm*|rxvt*)
+	PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}:${PWD}\007"'
+	;;
+*)
+	;;
+esac
