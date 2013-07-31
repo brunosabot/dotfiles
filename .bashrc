@@ -57,6 +57,7 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM="auto verbose"
 git='$(__git_ps1 "[%s]")'
 
+LOAD="`uptime | awk -F'load average: ' '{ print $2 }'`"
 
 PS1="$PS1COLOR[$PS1WHITE\$(date \"+%H:%M\")$PS1COLOR]$PS1WHITE \u$PS1COLOR@$PS1WHITE\h$PS1COLOR:$PS1WHITE\w$PS1COLOR$git$PS1NC$ "
 
@@ -65,9 +66,9 @@ echo ""
 echo -e "$NC Hello $WHITE$USER $NC!";
 echo -e "$NC Today is:$WHITE	`date`";
 if [ "$(id -u)" = "0" ]; then
-	echo -e "$NC Load:$RED		`w | grep up | awk '{print $9" "$10" "$11}'`";
+	echo -e "$NC Load:$RED		$LOAD";
 else
-	echo -e "$NC Load:$BLUE		`w | grep up | awk '{print $9" "$10" "$11}'`";
+	echo -e "$NC Load:$BLUE		$LOAD";
 fi
 echo ""
 
