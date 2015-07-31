@@ -66,3 +66,30 @@ function ii() {
 	echo -e "$NETWORK"
 
 }
+
+# Leon, profession : Nettoyeur
+function gitclean() {
+	# optimize the repository
+	git gc
+	# remove references to deleted remote
+	git remote update origin --prune
+}
+
+# Today I don't feel like doing anything
+function gitpp() {
+
+	if [ $# -eq 0 ]
+	then
+		git pull origin master
+		git push origin master
+	fi
+
+	if [ $# -eq 1 ]
+	then
+		git pull origin $1
+		git push origin $1
+	fi
+
+	git fetch
+
+}
