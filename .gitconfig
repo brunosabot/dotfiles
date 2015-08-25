@@ -47,11 +47,12 @@
 	find = log -p --minimal -m -S
 	oups = commit --amend -C HEAD
 	oops = commit --amend -C HEAD
+	pom = push origin master
 	push = push --tags
 	cdiff = diff --cached
 	fdiff = diff --name-only
 	rdiff  = "!f() { git diff "$1"^.."$1"; }; f"
-	sdiff = diff --word-diff-regex=.
+	sdiff = diff --word-diff=color --word-diff-regex=.
 	ign = ls-files -o -i --exclude-standard
 	last = log -1 --stat
 	cl = clone
