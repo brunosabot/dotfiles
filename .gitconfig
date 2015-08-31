@@ -1,6 +1,7 @@
 [user]
 	name = [Username]
 	email = [Email]
+
 [color]
 	diff = auto
 	status = auto
@@ -59,24 +60,33 @@
 	br = branch
 	unstage = reset HEAD --
 	dc = diff --cached
+
 [core]
 	pager = less -x4
 	excludesfile = ~/.gitignore
 	filemode = false
 	editor = vim
 	trustctime = false
+
 [diff]
 	mnemonicPrefix = true
+
 [rerere]
 	enabled = 1
+
 [push]
 	default = matching
-[credential]
-	helper = cache --timeout=3600
+
 [merge]
 	tool = vimdiff
+
 [mergetool]
 	keeptemporaries = false
 	keepbackups = false
 	prompt = false
 	trustexitcode = false
+
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

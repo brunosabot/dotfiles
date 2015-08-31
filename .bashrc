@@ -43,12 +43,12 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 	. /etc/bash_completion
 fi
 
-if [ -f ~/shell/git_completion.sh ]; then
-	. ~/shell/git_completion.sh
+if [ -f ~/shell/git-completion.bash ]; then
+	. ~/shell/git-completion.bash
 fi
 
-if [ -f ~/shell/git_prompt.sh ]; then
-	. ~/shell/git_prompt.sh
+if [ -f ~/shell/git-completion.bash ]; then
+	. ~/shell/git-prompt.sh
 fi
 
 GIT_PS1_SHOWDIRTYSTATE=1
