@@ -59,7 +59,7 @@ git='$(__git_ps1 "[%s]")'
 
 FROWNY="$PS1PURPLE:( $PS1NC"
 SELECT="if [ \$? = 0 ]; then echo \"\"; else echo \"${FROWNY}\"; fi"
-LOAD="`uptime | awk -F'load average: ' '{ print $2 }'`"
+LOAD="`uptime 2> /dev/null | awk -F'load average: ' '{ print $2 }'`"
 
 PS1="\`${SELECT}\`$PS1COLOR[$PS1WHITE\$(date \"+%H:%M\")$PS1COLOR]$PS1WHITE \u$PS1COLOR@$PS1WHITE\h$PS1COLOR:$PS1WHITE\w$PS1COLOR$git$PS1NC$ "
 
