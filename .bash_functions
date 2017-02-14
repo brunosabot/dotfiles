@@ -67,6 +67,11 @@ function ii() {
 
 }
 
+# 7 differencies game
+function gitld() {
+	git ld master...develop | grep -v "Merge branch" | grep -v "Merge remote"
+}
+
 # Leon, profession : Nettoyeur
 function gitclean() {
 	# optimize the repository
