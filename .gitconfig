@@ -38,6 +38,8 @@
 	cp = cherry-pick
 	cpc = cherry-pick --continue
 	fp = format-patch
+	ld = log --left-right --cherry-pick --oneline
+	lda = log --left-right --graph --cherry-pick --oneline
 	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative -n 20
 	lgo = log --pretty=oneline -n 40
 	lga = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
@@ -60,6 +62,7 @@
 	br = branch
 	unstage = reset HEAD --
 	dc = diff --cached
+	aliases = config --get-regexp alias
 
 [core]
 	pager = less -x4
@@ -67,6 +70,7 @@
 	filemode = false
 	editor = vim
 	trustctime = false
+	autocrlf = true
 
 [diff]
 	mnemonicPrefix = true
@@ -87,6 +91,8 @@
 	trustexitcode = false
 
 [filter "lfs"]
+	required = true
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
-	required = true
+[pull]
+	rebase = true
