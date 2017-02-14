@@ -47,7 +47,7 @@ if [ -f ~/shell/git-completion.bash ]; then
 	. ~/shell/git-completion.bash
 fi
 
-if [ -f ~/shell/git-completion.bash ]; then
+if [ -f ~/shell/git-prompt.sh ]; then
 	. ~/shell/git-prompt.sh
 fi
 
