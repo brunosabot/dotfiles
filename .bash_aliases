@@ -1,9 +1,9 @@
-export LS_OPTIONS='--color=auto'
+export LS_OPTIONS='-G'
 
 # RACCOURCIS
 alias cd='cd -P'
 alias c="clear"
-alias grep='grep $LS_OPTIONS'
+alias grep='grep --color=auto'
 alias it='iptables -nvx -L'
 alias l='ls $LS_OPTIONS -lh'
 alias ll='ls $LS_OPTIONS -alh'
