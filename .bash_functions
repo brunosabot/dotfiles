@@ -80,6 +80,11 @@ function gitclean() {
 	git remote update origin --prune
 }
 
+# Oh my God they killed Kenny!
+function rmdsstore() {
+	find . \( -name '.DS_Store' \) -delete
+}
+
 # Today I don't feel like doing anything
 function gitpp() {
 
