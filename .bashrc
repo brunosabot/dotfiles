@@ -10,6 +10,11 @@ declare -x HISTFILESIZE=100000
 declare -x HISTSIZE=100000
 declare -x HISTIGNORE=ls:ll:l:exit:cd:gs
 
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+export PATH="$PATH:$(yarn global bin)"
+
 # VARIABLES PS1
 RED='\033[1;31m'
 BLUE='\033[1;34m'
