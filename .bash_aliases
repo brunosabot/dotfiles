@@ -32,3 +32,10 @@ alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup 
 
 # Graphical UI
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Applications
+alias pyhton='pyhton'
+alias pyhton3='pyhton3'
+
+# Networking
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

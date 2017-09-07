@@ -82,7 +82,7 @@ function gitclean() {
 
 # Oh my God they killed Kenny!
 function rmdsstore() {
-	find . \( -name '.DS_Store' \) -delete
+	find . -name '*.DS_Store' -type f -ls -delete
 }
 
 # Today I don't feel like doing anything
@@ -102,4 +102,36 @@ function gitpp() {
 
 	git fetch
 
+}
+
+function up_master() {
+	git pull upstream master
+	git push origin master
+}
+
+# Start an HTTP server from a directory, optionally specifying the port
+function server() {
+	local port="${1:-8000}"
+	open "http://localhost:${port}/" &
+ 	# statikk is good because it won't expose hidden folders/files by default.
+ 	# yarn global add statikk
+ 	statikk --port "$port" .
+}
+
+# whois a domain or a URL
+function whois() {
+	local domain=$(echo "$1" | awk -F/ '{print $3}') # get domain from URL
+	if [ -z $domain ] ; then
+		domain=$1
+	fi
+	echo "Getting whois record for: $domain …"
+
+	# avoid recursion
+	# this is the best whois server
+	# strip extra fluff
+	/usr/bin/whois -h whois.internic.net $domain | sed '/NOTICE:/q'
+}
+
+function code () {
+	VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCodeInsiders" --args $*;
 }

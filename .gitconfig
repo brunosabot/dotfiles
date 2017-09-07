@@ -1,6 +1,7 @@
 [user]
 	name = [Username]
 	email = [Email]
+	signingkey = [GPGKey]
 
 [color]
 	diff = auto
@@ -79,7 +80,8 @@
 	enabled = 1
 
 [push]
-	default = matching
+	default = current
+	followTags = true
 
 [merge]
 	tool = vimdiff
@@ -97,3 +99,25 @@
 
 [pull]
 	rebase = true
+
+[commit]
+	gpgsign = true
+[help]
+	autocorrect = 1
+
+# rewrites of repo paths
+[url "git@github.com:"]
+	insteadOf = "https://github.com/"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
+	pushInsteadOf = "https://github.com/"
+
+[url "git://github.com/"]
+	insteadOf = "github:"
+
+[url "git@gist.github.com:"]
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+	insteadOf = "gist:"
