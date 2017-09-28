@@ -14,6 +14,7 @@ export ANDROID_HOME=~/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export PATH="$PATH:$(yarn global bin)"
+export PATH="$PATH:~/go/bin"
 
 # VARIABLES PS1
 PS1RED="\033[1;31m"
