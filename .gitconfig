@@ -71,7 +71,8 @@
 	filemode = false
 	editor = vim
 	trustctime = false
-	autocrlf = true
+	autocrlf = input
+	ignorecase = false
 
 [diff]
 	mnemonicPrefix = true
