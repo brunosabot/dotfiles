@@ -1,7 +1,7 @@
 [user]
-	name = [Username]
-	email = [Email]
-	signingkey = [GPGKey]
+	email = brunosabot@gmail.com
+	name = Bruno Sabot
+	signingkey = 8DB03DCED0769554
 
 [color]
 	diff = auto
@@ -102,6 +102,7 @@
 
 [commit]
 	gpgsign = true
+
 [help]
 	autocorrect = 1
 

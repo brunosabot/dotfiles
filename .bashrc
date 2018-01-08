@@ -10,6 +10,7 @@ declare -x HISTFILESIZE=100000
 declare -x HISTSIZE=100000
 declare -x HISTIGNORE=ls:ll:l:exit:cd:gs
 
+export GPG_TTY=$(tty)
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
