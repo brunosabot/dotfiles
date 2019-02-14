@@ -78,6 +78,7 @@ function gitclean() {
 	git gc
 	# remove references to deleted remote
 	git remote update origin --prune
+	git remote update upstream --prune
 }
 
 # Oh my God they killed Kenny!
@@ -132,6 +133,12 @@ function whois() {
 	/usr/bin/whois -h whois.internic.net $domain | sed '/NOTICE:/q'
 }
 
-function code () {
-	VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCodeInsiders" --args $*;
+function brewrox () {
+	brew update
+	brew upgrade
+	brew cleanup -s
+	brew services cleanup
+	# diag
+	# brew doctor
+	# brew missing
 }

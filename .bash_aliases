@@ -29,6 +29,7 @@ alias gp='git pull origin master'
 alias gs='git status -s -b'
 alias gdmh='git diff master HEAD'
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`' # Go to git root
+alias gbc='git branch --merged | egrep -v "(^\*|master|develop|release)" | xargs git branch -d'
 
 # Graphical UI
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'

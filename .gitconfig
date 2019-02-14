@@ -95,8 +95,9 @@
 
 [filter "lfs"]
 	required = true
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
 
 [pull]
 	rebase = true
@@ -123,3 +124,6 @@
 
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
+
+[rebase]
+	autoStash = true

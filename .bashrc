@@ -1,21 +1,11 @@
 [ -z "$PS1" ] && return
 
-shopt -s checkwinsize
-shopt -s histappend
-
 umask 022
 
 declare -x HISTCONTROL=ignoredups
 declare -x HISTFILESIZE=100000
 declare -x HISTSIZE=100000
 declare -x HISTIGNORE=ls:ll:l:exit:cd:gs
-
-export GPG_TTY=$(tty)
-export ANDROID_HOME=~/Library/Android/sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
-export PATH="$PATH:$(yarn global bin)"
-export PATH="$PATH:~/go/bin"
 
 # VARIABLES PS1
 PS1RED="\[\033[1;31m\]"
@@ -54,8 +44,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 	. /etc/bash_completion
 fi
 
-if [ -f ~/shell/git-completion.bash ]; then
-	. ~/shell/git-completion.bash
+if [ -f ~/shell/git-completion.zsh ]; then
+	. ~/shell/git-completion.zsh
 fi
 
 if [ -f ~/shell/git-prompt.sh ]; then
@@ -93,3 +83,6 @@ xterm*|rxvt*)
 *)
 	;;
 esac
+
+# added by travis gem
+[ -f /Users/pc/.travis/travis.sh ] && source /Users/pc/.travis/travis.sh
